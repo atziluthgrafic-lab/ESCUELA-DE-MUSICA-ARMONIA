@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #ffffff;
+  --color-brand-surface: #fafbfe;
+  --color-brand-surface-bright: #f1f5f9;
+  --color-brand-container: #ffffff;
+  --color-brand-container-high: #f8fafc;
+  --color-brand-container-highest: #f1f5f9;
+  
+  --color-brand-primary: #0284c7; /* Elegant Slate Ocean Blue from the logo scale */
+  --color-brand-on-primary: #ffffff;
+  --color-brand-primary-container: #83cfff; /* Core pastel blue of the logo */
+  
+  --color-brand-secondary: #db2777; /* Deep readable Pink from the logo scale */
+  --color-brand-secondary-container: #ffb0cc; /* Core pastel pink of the logo */
+  --color-brand-on-secondary: #ffffff;
+  
+  --color-brand-tertiary: #d97706; /* Deep readable Apricot from the logo scale */
+  --color-brand-tertiary-container: #ffb786; /* Core pastel apricot of the logo */
+  --color-brand-on-tertiary: #ffffff;
+  
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-mono: "Space Grotesk", "JetBrains Mono", monospace;
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1e293b;
+  font-family: var(--font-sans);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Scrollbar support */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 99px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Animations classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* 
+=========================================
+PREMIUM WHITE HARMONY THEME ACCENTS 
+=========================================
+*/
+
+/* Solid core variables adapt for all cards to keep white backgrounds */
+#app-root-container {
+  background-color: #fcfdfe !important; /* Extremely high-class light pearl white background */
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(131, 207, 255, 0.15) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(255, 176, 204, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(255, 183, 134, 0.12) 0px, transparent 50%) !important; /* Alive ambient light mesh glow! */
+  color: #0f172a !important; /* Elegant modern slate text */
+}
+
+/* Card components adaptation to White Premium with soft border shadows */
+.bg-brand-container {
+  background-color: #ffffff !important;
+  border-width: 1px !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bg-brand-container:hover {
+  transform: translateY(-3px) scale(1.01) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 35px -10px rgba(131, 207, 255, 0.25), 0 10px 15px -8px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Dynamic glow effect mapping and background blocks to look stunning */
+.bg-brand-container-highest {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Dynamic glow elements in page sections */
+.bg-\[\#0b1326\] {
+  background-color: #ffffff !important;
+}
+
+/* Header dynamic glass blur border slate */
+#app-header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -5px rgba(0,0,0,0.05) !important;
+}
+
+#whatsapp-header {
+  background-color: #fafbfc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Let's translate text classes */
+.text-\[\#bdc8d1\], .text-\[\#bdc8d1\]\/90, .text-\[\#dae2fd\] {
+  color: #334155 !important; /* Deep contrast Slate-700 for maximum readability */
+}
+
+.text-\[\#bdc8d1\]\/60, .text-\[\#bdc8d1\]\/50, .text-white\/70, .text-white\/60 {
+  color: #475569 !important; /* High contrast Slate-600 */
+}
+
+.text-white\/40, .text-\[\#bdc8d1\]\/30, .text-\[\#bdc8d1\]\/40 {
+  color: #64748b !important; /* Slate-500 */
+}
+
+/* Let's ensure active navigation borders and links look gorgeous */
+.border-white\/10, .border-white\/5, .border-white\/15, .border-white\/20, .border-white\/30 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Keyboard keys should stand out still */
+.bg-white {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Audio visualizer black bg */
+.bg-black {
+  background-color: #0c101d !important;
+}
+
+/* Active elements circle nodes */
+.bg-brand-container.border-white\/10 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+/* Make specific relative minor key button styling more vibrant with logo colors */
+.bg-white\/5.border-white\/5 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+/* WhatsApp messages */
+.self-start.mr-auto .bg-brand-container {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Make checkout modals stand out beautifully with sharp light themes */
+#checkout-modal {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+}
+#checkout-modal-overlay {
+  background-color: rgba(15, 23, 42, 0.4) !important;
+}
+
+/* Additional high-fidelity improvements to remove bleak look */
+.text-transparent {
+  background-clip: text !important;
+}
+
+/* Premium gradient accents */
+.text-brand-gradient {
+  background: linear-gradient(135deg, #0091ff 0%, #f43f5e 50%, #ff6b00 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Interactive elements button style */
+.bg-gradient-to-r.from-\[\#ffd9e4\] {
+  background: linear-gradient(135deg, #ff2a85 0%, #ff6b00 100%) !important;
+  color: #ffffff !important;
+}

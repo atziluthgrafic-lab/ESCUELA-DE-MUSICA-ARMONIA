@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Escuela de Música Armonía ",
+  "description": "Sitio web interactivo de la Escuela de Música Armonía, con simulador de aula virtual, reserva de clases, catálogo de cursos y circle de quintas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
