@@ -306,7 +306,7 @@ export default function App() {
         <div className="flex justify-center gap-6 text-slate-500 font-mono text-[10px]">
           <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Políticas de Privacidad del Alumno Armonía.')}>Privacidad</button>
           <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Términos de servicio y condiciones de inscripción.')}>Términos</button>
-          <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Contacto Escuela: +52 (55) 2831 9281 | hola@armoniamusica.com')}>Contacto</button>
+          <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Contacto Escuela: WhatsApp +57 311 754 1352 | hola@armoniamusica.com')}>Contacto</button>
           <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Soporte técnico para alumnos activos 24/7.')}>Soporte</button>
         </div>
 

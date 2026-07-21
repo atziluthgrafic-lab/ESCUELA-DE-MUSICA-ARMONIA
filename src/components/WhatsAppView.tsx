@@ -30,7 +30,7 @@ export default function WhatsAppView({ initialInstrument = 'Piano', onBookClick 
       {
         id: 'msg-1',
         sender: 'sofia',
-        text: '¡Hola! Bienvenido al chat de soporte de Armonía 🎹. Mi nombre es Sofía Calderón, asesora académica estrella de la institución.',
+        text: '¡Hola! Bienvenido al chat de soporte de Armonía 🎹. Mi nombre es Sofía Calderón, asesora académica estrella. Puedes contactarnos directamente en nuestro WhatsApp oficial: +57 311 754 1352.',
         timestamp: 'Ahora'
       },
       {
@@ -101,6 +101,36 @@ export default function WhatsAppView({ initialInstrument = 'Piano', onBookClick 
 
   return (
     <div className="space-y-4 pb-24 max-w-md mx-auto pt-4 flex flex-col h-[82vh]" id="whatsapp-support-panel">
+      {/* Direct WhatsApp Contact Banner */}
+      <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-3.5 flex items-center justify-between text-left shadow-sm" id="whatsapp-direct-banner">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-[#25D366] text-slate-950 flex items-center justify-center font-bold shrink-0 shadow">
+            <MessageCircle size={18} fill="currentColor" />
+          </div>
+          <div>
+            <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase tracking-wider block">Contacto WhatsApp Oficial</span>
+            <a 
+              href="https://wa.me/573117541352" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm font-mono font-black text-slate-900 hover:text-emerald-700 transition-colors flex items-center gap-1"
+            >
+              +57 311 754 1352
+            </a>
+          </div>
+        </div>
+
+        <a
+          href="https://wa.me/573117541352"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-slate-950 font-mono font-bold text-xs rounded-xl shadow transition-all hover:scale-105 active:scale-95 flex items-center gap-1"
+        >
+          <span>Abrir</span>
+          <Send size={12} />
+        </a>
+      </div>
+
       {/* Header contact box resembling actual WhatsApp */}
       <div className="bg-white border border-slate-200 rounded-2xl p-4 flex items-center justify-between shadow-md" id="whatsapp-header">
         <div className="flex items-center gap-3">
@@ -119,18 +149,21 @@ export default function WhatsAppView({ initialInstrument = 'Piano', onBookClick 
               <span className="font-extrabold text-sm text-slate-805">Sofía Calderón</span>
               <Sparkles size={11} className="text-brand-secondary animate-pulse" />
             </div>
-            <span className="text-[10px] text-green-600 font-mono font-bold">● Asesora Musical Activa</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[10px] text-green-600 font-mono font-bold">● En Línea</span>
+              <span className="text-[10px] text-slate-400 font-mono">|+57 311 754 1352</span>
+            </div>
           </div>
         </div>
 
         {/* Quick click phone block */}
-        <button
-          onClick={() => alert('¡Simulando llamada a Sofia Mendoza en el número +52 (55) 2831 9281. Un asesor musical se contactará contigo para continuar!')}
-          className="p-2 hover:bg-slate-100 border border-slate-200 rounded-full text-brand-primary cursor-pointer transition-all"
-          title="Llamada telefónica instantánea"
+        <a
+          href="tel:+573117541352"
+          className="p-2 hover:bg-slate-100 border border-slate-200 rounded-full text-brand-primary cursor-pointer transition-all flex items-center justify-center"
+          title="Llamar al +57 311 754 1352"
         >
           <PhoneCall size={16} />
-        </button>
+        </a>
       </div>
 
       {/* Messages scrolling container area */}
