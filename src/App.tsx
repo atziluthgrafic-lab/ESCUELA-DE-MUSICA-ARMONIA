@@ -296,7 +296,7 @@ export default function App() {
       <footer className="w-full bg-slate-950 border-t border-slate-800 py-8 px-6 text-center text-xs space-y-4 pb-28 mt-12" id="app-brand-footer">
         <div className="space-y-1">
           <span className="text-sm font-display font-black bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent font-extrabold uppercase tracking-wide">
-            Da Capo Academia Musical
+            AURION Academia Musical
           </span>
           <p className="text-[10px] text-slate-400 font-mono italic">
             "Aprende música a tu ritmo" — Formación Musical de Excelencia
@@ -304,14 +304,14 @@ export default function App() {
         </div>
 
         <div className="flex justify-center gap-6 text-slate-400 font-mono text-[10px]">
-          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Políticas de Privacidad de Da Capo Academia Musical.')}>Privacidad</button>
+          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Políticas de Privacidad de AURION Academia Musical.')}>Privacidad</button>
           <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Términos de servicio y condiciones de inscripción.')}>Términos</button>
-          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Contacto Escuela: WhatsApp +57 311 754 1352 | hola@dacapomusical.com')}>Contacto</button>
+          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Contacto Escuela: WhatsApp +57 311 754 1352 | hola@aurionmusical.com')}>Contacto</button>
           <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Soporte técnico para alumnos activos 24/7.')}>Soporte</button>
         </div>
 
         <p className="text-[10px] text-slate-500 font-mono">
-          © 2026 Academia Musical Da Capo. Todos los derechos reservados.
+          © 2026 Academia Musical AURION. Todos los derechos reservados.
         </p>
       </footer>
 

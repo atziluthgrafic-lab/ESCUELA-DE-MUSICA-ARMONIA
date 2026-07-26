@@ -125,7 +125,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
 
   const faqs = [
     {
-      q: '¿A qué edad pueden ingresar los estudiantes a Da Capo Academia?',
+      q: '¿A qué edad pueden ingresar los estudiantes a AURION Academia?',
       a: 'Aceptamos estudiantes desde los 3 años de edad en nuestro programa de Iniciación Musical Infantil. Para jóvenes y adultos no hay límite de edad; nuestros programas están diseñados para principiantes y avanzados.'
     },
     {
@@ -149,7 +149,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
   return (
     <div className="space-y-16 pb-24 font-sans text-slate-800" id="dacapo-cloned-home">
       
-      {/* Announcement bar matching Da Capo Academia Banner style */}
+      {/* Announcement bar matching AURION Academia Banner style */}
       <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700/80 rounded-2xl p-3.5 sm:p-4 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left" id="dacapo-top-banner">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-400 flex items-center justify-center font-bold shrink-0">
@@ -161,7 +161,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
               <span className="bg-emerald-500 text-slate-950 font-mono text-[10px] font-black px-2 py-0.5 rounded-full uppercase">20% Dcto</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-300 font-medium">
-              Aprende música en la <strong className="text-white">Academia Musical Da Capo</strong>. ¡Asegura tu cupo hoy!
+              Aprende música en la <strong className="text-white">Academia Musical AURION</strong>. ¡Asegura tu cupo hoy!
             </p>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
         </a>
       </div>
 
-      {/* Cloned Da Capo Hero Section */}
+      {/* Cloned AURION Hero Section */}
       <section className="relative rounded-3xl overflow-hidden bg-slate-950 text-white p-6 sm:p-12 md:p-16 border border-slate-800 shadow-2xl" id="dacapo-hero-section">
         {/* Background ambient lighting */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
@@ -189,7 +189,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 border border-amber-500/30 rounded-full text-xs font-mono font-bold text-amber-400 uppercase tracking-widest shadow-sm">
               <Award size={14} />
-              <span>DA CAPO ACADEMIA MUSICAL • FORMACIÓN DE EXCELENCIA</span>
+              <span>AURION ACADEMIA MUSICAL • FORMACIÓN DE EXCELENCIA</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight leading-none text-white">
@@ -200,7 +200,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed font-medium mx-auto lg:mx-0">
-              En <strong className="text-white">Da Capo Academia Musical</strong> combinamos metodologías tradicionales y modernas para despertar tu talento. Cursos personalizados de Piano, Canto, Guitarra, Violín, Batería e Iniciación Infantil con los mejores profesores graduados.
+              En <strong className="text-white">AURION Academia Musical</strong> combinamos metodologías tradicionales y modernas para despertar tu talento. Cursos personalizados de Piano, Canto, Guitarra, Violín, Batería e Iniciación Infantil con los mejores profesores graduados.
             </p>
 
             {/* CTAs */}
@@ -240,7 +240,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
             <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl group bg-slate-900">
               <img 
                 src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=800&auto=format&fit=crop" 
-                alt="Clases de Piano y Música Da Capo" 
+                alt="Clases de Piano y Música AURION" 
                 className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                 referrerPolicy="no-referrer"
               />
@@ -255,7 +255,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
               {/* Bottom Card Info */}
               <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-800 space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-mono font-bold text-white">Academia Musical Da Capo</span>
+                  <span className="font-mono font-bold text-white">Academia Musical AURION</span>
                   <span className="text-emerald-400 font-mono font-bold text-[10px]">● Clases Activas</span>
                 </div>
                 <p className="text-xs text-slate-300">
@@ -281,7 +281,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
         </div>
       </section>
 
-      {/* Stats Highlights Bar (Da Capo en Cifras) */}
+      {/* Stats Highlights Bar (AURION en Cifras) */}
       <section className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center" id="dacapo-stats-bar">
         <div className="space-y-1">
           <div className="text-3xl sm:text-4xl font-display font-black text-slate-900">
@@ -327,7 +327,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
             Nuestras Cátedras Musicales
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-black text-slate-900">
-            Programas Académicos Da Capo
+            Programas Académicos AURION
           </h2>
           <p className="text-sm text-slate-600">
             Explora nuestros cursos diseñados para todas las edades y niveles. Elige la especialidad que más te apasiona y aprende con docentes calificados.
@@ -435,7 +435,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
           <div>
             <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-1">
               <Volume2 size={14} />
-              <span>Laboratorio Interactivo Da Capo</span>
+              <span>Laboratorio Interactivo AURION</span>
             </div>
             <h3 className="text-2xl font-display font-black text-white">
               Sintetizador & Afinación de Instrumento
@@ -508,11 +508,11 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
         </div>
       </section>
 
-      {/* Methodology Section (Why Choose Da Capo Academia) */}
+      {/* Methodology Section (Why Choose AURION Academia) */}
       <section className="space-y-8" id="dacapo-methodology-section">
         <div className="text-center space-y-2 max-w-xl mx-auto">
           <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 rounded-full text-xs font-mono font-bold uppercase tracking-widest inline-block">
-            Metodología Da Capo
+            Metodología AURION
           </span>
           <h2 className="text-3xl font-display font-black text-slate-900">
             ¿Por qué Formarte con Nosotros?
@@ -569,7 +569,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
       <section className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 space-y-8" id="dacapo-faculty">
         <div className="text-center space-y-2 max-w-xl mx-auto">
           <span className="text-xs font-mono font-bold text-amber-700 uppercase tracking-widest">
-            Cuerpo Docente Da Capo
+            Cuerpo Docente AURION
           </span>
           <h2 className="text-3xl font-display font-black text-slate-900">
             Aprende con los Mejores Maestros
@@ -612,7 +612,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
               </div>
 
               <h3 className="text-2xl font-display font-black text-white">
-                ¡Solicitud Registrada en Da Capo!
+                ¡Solicitud Registrada en AURION!
               </h3>
 
               <p className="text-sm text-slate-300 leading-relaxed">
@@ -654,7 +654,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
                   Agenda tu Clase de Prueba Gratis
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-400">
-                  Completa tus datos y un asesor de <strong className="text-white">Da Capo Academia Musical</strong> te contactará por WhatsApp para coordinar tu primera clase.
+                  Completa tus datos y un asesor de <strong className="text-white">AURION Academia Musical</strong> te contactará por WhatsApp para coordinar tu primera clase.
                 </p>
               </div>
 
@@ -741,7 +741,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
             Preguntas Frecuentes
           </h2>
           <p className="text-xs text-slate-600">
-            Resolvemos tus dudas sobre el inicio de clases en Da Capo Academia.
+            Resolvemos tus dudas sobre el inicio de clases en AURION Academia.
           </p>
         </div>
 
@@ -776,7 +776,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
       <section className="bg-slate-900 text-white border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6" id="dacapo-contact-footer">
         <div className="space-y-2 text-center md:text-left">
           <h3 className="text-xl font-display font-black text-amber-400">
-            Da Capo Academia Musical
+            AURION Academia Musical
           </h3>
           <p className="text-xs text-slate-300 max-w-md">
             Atención personalizada de Lunes a Sábado de 8:00 AM a 7:00 PM. ¡Escríbenos y comienza a tocar hoy mismo!
@@ -810,7 +810,7 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
           title="Consúltanos en WhatsApp +57 311 754 1352"
         >
           <MessageCircle size={18} fill="currentColor" />
-          <span>Da Capo WhatsApp +57 311 754 1352</span>
+          <span>AURION WhatsApp +57 311 754 1352</span>
         </a>
       </div>
 

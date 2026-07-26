@@ -51,7 +51,7 @@ export default function Header({ onInscribirme, onGoToProfile, studentName }: He
         
         <div>
           <span className="text-xl font-display font-extrabold tracking-tight bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">
-            Da Capo
+            AURION
           </span>
           <span className="hidden sm:block text-[9px] uppercase tracking-widest text-slate-400 font-mono">
             Academia Musical
