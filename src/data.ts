@@ -201,7 +201,7 @@ export const getFallbackModules = (courseId: string, titleSuffix: string): Modul
 export const INITIAL_COURSES: Course[] = [
   {
     id: 'piano-maestro',
-    title: 'PAQUETE ARMONIA START',
+    title: 'PAQUETE ARMONÍA STAR',
     price: '$690.000 COP',
     category: 'Piano',
     type: 'En Vivo',
@@ -209,72 +209,6 @@ export const INITIAL_COURSES: Course[] = [
     shortDescription: 'Un programa integral de 36 masterclasses online para músicos modernos en Piano.',
     description: 'Aprende a leer partituras desde tu primera lección en vivo, desde teoría clásica hasta producción digital con el rey de los instrumentos de teclado.',
     unlocked: true,
-    durationInMonths: 4,
-    modulesCount: 3
-  },
-  {
-    id: 'guitarra-acustica',
-    title: 'Guitarra Acústica',
-    price: '$690.000 COP',
-    category: 'Guitarra',
-    type: 'En Línea',
-    imageUrl: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop',
-    shortDescription: 'Domina los acordes esenciales, arpegios y técnicas de rasgueo online.',
-    description: 'Explora géneros populares, aprende afinamiento de oído con herramientas web y ejercicios ergonómicos profesionales para avanzar cómodamente desde tu casa.',
-    unlocked: false,
-    durationInMonths: 5,
-    modulesCount: 2
-  },
-  {
-    id: 'ukelele-pop',
-    title: 'Ukelele Pop',
-    price: '$690.000 COP',
-    category: 'Ukelele',
-    type: 'Masterclass',
-    imageUrl: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=600&auto=format&fit=crop',
-    shortDescription: 'Diversión, ritmo caribeño y tus canciones favoritas en 4 cuerdas 100% online.',
-    description: 'El ukelele es el instrumento ideal para descubrir la música rápidamente en nuestro formato interactivo. Simple, portátil y súper divertido. Ideal para niños y jóvenes de corazón.',
-    unlocked: false,
-    durationInMonths: 3,
-    modulesCount: 2
-  },
-  {
-    id: 'violin-clasico',
-    title: 'Violín Clásico',
-    price: '$690.000 COP',
-    category: 'Violín',
-    type: 'En Vivo',
-    imageUrl: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=600&auto=format&fit=crop',
-    shortDescription: 'Explora la excelencia clásica en 36 mentorías online de alto nivel.',
-    description: 'Perfecciona tu técnica de arco, la postura del mástil y domina la lectura de partituras e intervalos en vivo con profesores sinfónicos profesionales mediante transmisión HD.',
-    unlocked: false,
-    durationInMonths: 6,
-    modulesCount: 2
-  },
-  {
-    id: 'produccion-musical',
-    title: 'Producción Musical',
-    price: '$690.000 COP',
-    category: 'Producción',
-    type: 'Masterclass',
-    imageUrl: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600&auto=format&fit=crop',
-    shortDescription: 'Transforma tu creatividad en 36 clases magistrales de producción digital.',
-    description: 'Domina el lenguaje musical y las tecnologías desde tu home studio. Graba, mezcla, sintetiza y masteriza con Ableton Live, Logic Pro o Pro Tools de nivel profesional con nuestro soporte virtual permanente.',
-    unlocked: false,
-    durationInMonths: 6,
-    modulesCount: 2
-  },
-  {
-    id: 'teoria-armonia',
-    title: 'Teoría y Armonía',
-    price: '$690.000 COP',
-    category: 'Teoría',
-    type: 'En Línea',
-    imageUrl: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=600&auto=format&fit=crop',
-    shortDescription: 'Desbloquea los secretos de la música en 36 lecciones virtuales fundamentales.',
-    description: 'Aprende a leer y entender cada nota desde el primer día en nuestra Aula Virtual interactiva. El Círculo de Quintas, armonización de escalas menores y progresión de grados.',
-    unlocked: false,
-    featured: true,
     durationInMonths: 4,
     modulesCount: 3
   }

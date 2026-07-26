@@ -23,6 +23,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Course, Module, Comment } from '../types';
+import { getFallbackModules } from '../data';
 
 interface AdminViewProps {
   courses: Course[];
@@ -49,6 +50,14 @@ export default function AdminView({
   const [simulatedCapacity, setSimulatedCapacity] = useState(85);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
+  // States for New Course Creation
+  const [newCourseTitle, setNewCourseTitle] = useState('');
+  const [newCourseCategory, setNewCourseCategory] = useState('Guitarra');
+  const [newCoursePrice, setNewCoursePrice] = useState('$690.000 COP');
+  const [newCourseType, setNewCourseType] = useState<'En Vivo' | 'En Línea' | 'Masterclass'>('En Línea');
+  const [newCourseDesc, setNewCourseDesc] = useState('');
+  const [newCourseImage, setNewCourseImage] = useState('');
+
   // States for Video Management Form (Priority Instrument: Piano)
   const [vidCategory, setVidCategory] = useState('Piano');
   const [vidCourseId, setVidCourseId] = useState('piano-maestro');
@@ -58,6 +67,51 @@ export default function AdminView({
   const [newVidTitle, setNewVidTitle] = useState('');
   const [newVidUrl, setNewVidUrl] = useState('');
   const [newVidDuration, setNewVidDuration] = useState('04:30');
+
+  const handleCreateCourse = (e: FormEvent) => {
+    e.preventDefault();
+    if (!newCourseTitle.trim()) {
+      alert('Ingresa el título del nuevo curso');
+      return;
+    }
+
+    const courseId = `course-${Date.now()}`;
+    const defaultImages: Record<string, string> = {
+      'Guitarra': 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop',
+      'Piano': 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop',
+      'Ukelele': 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=600&auto=format&fit=crop',
+      'Violín': 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=600&auto=format&fit=crop',
+      'Producción': 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600&auto=format&fit=crop',
+      'Teoría': 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=600&auto=format&fit=crop',
+    };
+
+    const newCourse: Course = {
+      id: courseId,
+      title: newCourseTitle,
+      price: newCoursePrice || '$690.000 COP',
+      category: newCourseCategory,
+      type: newCourseType,
+      imageUrl: newCourseImage || defaultImages[newCourseCategory] || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop',
+      shortDescription: newCourseDesc || `Programa de ${newCourseCategory}.`,
+      description: newCourseDesc || `Curso especializado de ${newCourseCategory} con clases estructuradas y acompañamiento personalizado.`,
+      unlocked: true,
+      durationInMonths: 4,
+      modulesCount: 2
+    };
+
+    const fallbackMods = getFallbackModules(courseId, newCourseTitle);
+    onUpdateModulesByCourse({
+      ...modulesByCourse,
+      [courseId]: fallbackMods
+    });
+
+    onUpdateCourses([...courses, newCourse]);
+
+    setNewCourseTitle('');
+    setNewCourseDesc('');
+    setNewCourseImage('');
+    showFeedback(`¡Curso "${newCourse.title}" agregado con éxito! Se acomodará de manera uniforme en la página de cursos.`);
+  };
 
   // Trigger cascade selection when Category changes
   const handleCategorySelect = (category: string) => {
@@ -437,17 +491,17 @@ export default function AdminView({
           </section>
 
           {/* School config adjustments */}
-          <section className="bg-white border border-slate-200 p-5 rounded-2xl space-y-4 shadow-sm" id="admin-capacity-card">
-            <h3 className="text-sm font-display font-black text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
-              <Users size={14} className="text-brand-tertiary" />
+          <section className="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl space-y-4 shadow-xl" id="admin-capacity-card">
+            <h3 className="text-sm font-display font-black text-slate-100 uppercase tracking-wide flex items-center gap-1.5">
+              <Users size={14} className="text-amber-400" />
               Sede Principal y Capacidad
             </h3>
 
             <div className="space-y-4 text-xs font-semibold">
               <div className="space-y-1.5">
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-500">Capacidad Simbólica del Servidor</span>
-                  <span className="font-mono font-bold text-brand-secondary">{simulatedCapacity}%</span>
+                  <span className="text-slate-400">Capacidad Simbólica del Servidor</span>
+                  <span className="font-mono font-bold text-amber-400">{simulatedCapacity}%</span>
                 </div>
                 <input
                   type="range"
@@ -455,20 +509,128 @@ export default function AdminView({
                   max="100"
                   value={simulatedCapacity}
                   onChange={(e) => setSimulatedCapacity(parseInt(e.target.value))}
-                  className="w-full h-1.5 bg-slate-100 border border-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-secondary"
+                  className="w-full h-1.5 bg-slate-950 border border-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
                   id="admin-capacity-slider"
                 />
               </div>
 
-              <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                <span className="text-[10px] font-mono font-bold text-slate-400 block">SOPORTE DE ALUMNO ACTIVO</span>
-                <p className="text-[11px] text-slate-600 leading-relaxed font-semibold">
+              <div className="p-3 bg-slate-950/60 border border-slate-800 rounded-xl space-y-1">
+                <span className="text-[10px] font-mono font-bold text-amber-400/80 block">SOPORTE DE ALUMNO ACTIVO</span>
+                <p className="text-[11px] text-slate-300 leading-relaxed font-semibold">
                   <strong>Alumno actual:</strong> {studentName} <br />
                   <strong>Matrícula Registrada:</strong> ARM-2026-09812 <br />
                   <strong>Conexión:</strong> Segura SSL LocalStorage
                 </p>
               </div>
             </div>
+          </section>
+
+          {/* Create New Course Form Card */}
+          <section className="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-4 shadow-xl relative overflow-hidden" id="admin-create-course-card">
+            <div className="space-y-1 border-b border-slate-800 pb-3">
+              <h3 className="text-sm font-display font-black text-slate-100 uppercase tracking-wide flex items-center gap-2">
+                <BookOpen size={16} className="text-amber-400" />
+                Agregar Nuevo Curso al Catálogo
+              </h3>
+              <p className="text-[11px] text-slate-400 font-medium">
+                Crea un nuevo programa. Se acomodará de manera uniforme en la página de Cursos.
+              </p>
+            </div>
+
+            <form onSubmit={handleCreateCourse} className="space-y-3 text-xs text-slate-300 font-medium">
+              <div className="space-y-1">
+                <label className="font-mono text-[10px] text-slate-400 uppercase block" htmlFor="new-course-title">Título del Curso</label>
+                <input
+                  id="new-course-title"
+                  type="text"
+                  required
+                  value={newCourseTitle}
+                  onChange={(e) => setNewCourseTitle(e.target.value)}
+                  placeholder="Ej. Guitarra Acústica & Solos"
+                  className="w-full px-3.5 py-2 bg-slate-950 rounded-xl border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500 shadow-inner font-semibold"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="font-mono text-[10px] text-slate-400 uppercase block" htmlFor="new-course-category">Categoría</label>
+                  <select
+                    id="new-course-category"
+                    value={newCourseCategory}
+                    onChange={(e) => setNewCourseCategory(e.target.value)}
+                    className="w-full px-3 py-2 bg-slate-950 rounded-xl border border-slate-800 text-slate-100 focus:outline-none focus:border-amber-500 font-semibold cursor-pointer"
+                  >
+                    <option value="Guitarra">🎸 Guitarra</option>
+                    <option value="Piano">🎹 Piano</option>
+                    <option value="Ukelele">🪕 Ukelele</option>
+                    <option value="Violín">🎻 Violín</option>
+                    <option value="Producción">🎧 Producción</option>
+                    <option value="Teoría">📚 Teoría</option>
+                  </select>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-mono text-[10px] text-slate-400 uppercase block" htmlFor="new-course-type">Modalidad</label>
+                  <select
+                    id="new-course-type"
+                    value={newCourseType}
+                    onChange={(e) => setNewCourseType(e.target.value as any)}
+                    className="w-full px-3 py-2 bg-slate-950 rounded-xl border border-slate-800 text-slate-100 focus:outline-none focus:border-amber-500 font-semibold cursor-pointer"
+                  >
+                    <option value="En Línea">En Línea</option>
+                    <option value="En Vivo">En Vivo</option>
+                    <option value="Masterclass">Masterclass</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                  <label className="font-mono text-[10px] text-slate-400 uppercase block" htmlFor="new-course-price">Precio</label>
+                  <input
+                    id="new-course-price"
+                    type="text"
+                    value={newCoursePrice}
+                    onChange={(e) => setNewCoursePrice(e.target.value)}
+                    placeholder="$690.000 COP"
+                    className="w-full px-3.5 py-2 bg-slate-950 rounded-xl border border-slate-800 text-slate-100 focus:outline-none focus:border-amber-500 font-mono font-bold"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="font-mono text-[10px] text-slate-400 uppercase block" htmlFor="new-course-image">Portada (Opcional)</label>
+                  <input
+                    id="new-course-image"
+                    type="text"
+                    value={newCourseImage}
+                    onChange={(e) => setNewCourseImage(e.target.value)}
+                    placeholder="https://..."
+                    className="w-full px-3.5 py-2 bg-slate-950 rounded-xl border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="font-mono text-[10px] text-slate-400 uppercase block" htmlFor="new-course-desc">Descripción</label>
+                <textarea
+                  id="new-course-desc"
+                  rows={2}
+                  value={newCourseDesc}
+                  onChange={(e) => setNewCourseDesc(e.target.value)}
+                  placeholder="Descripción resumida del programa..."
+                  className="w-full px-3.5 py-2 bg-slate-950 rounded-xl border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500 font-medium"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-2.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:brightness-110 text-slate-950 font-display text-xs font-black uppercase tracking-wider rounded-xl cursor-pointer transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-1.5"
+                id="btn-submit-create-course"
+              >
+                <PlusCircle size={15} />
+                Publicar Curso en el Catálogo
+              </button>
+            </form>
           </section>
         </div>
 

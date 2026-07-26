@@ -91,134 +91,128 @@ body {
 
 /* 
 =========================================
-PREMIUM WHITE HARMONY THEME ACCENTS 
+PREMIUM PITCH BLACK HARMONY THEME ACCENTS 
 =========================================
 */
 
-/* Solid core variables adapt for all cards to keep white backgrounds */
+/* Deep pitch black core container */
 #app-root-container {
-  background-color: #fcfdfe !important; /* Extremely high-class light pearl white background */
+  background-color: #000000 !important; /* Pure Pitch Black */
   background-image: 
-    radial-gradient(at 10% 20%, rgba(131, 207, 255, 0.15) 0px, transparent 50%),
-    radial-gradient(at 90% 10%, rgba(255, 176, 204, 0.15) 0px, transparent 50%),
-    radial-gradient(at 50% 90%, rgba(255, 183, 134, 0.12) 0px, transparent 50%) !important; /* Alive ambient light mesh glow! */
-  color: #0f172a !important; /* Elegant modern slate text */
+    radial-gradient(at 15% 15%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+    radial-gradient(at 85% 25%, rgba(16, 185, 129, 0.07) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(59, 130, 246, 0.07) 0px, transparent 50%) !important; /* Elegant ambient glowing mesh */
+  color: #f8fafc !important; /* Crisp high-contrast text */
 }
 
-/* Card components adaptation to White Premium with soft border shadows */
-.bg-brand-container {
-  background-color: #ffffff !important;
+body {
+  background-color: #000000 !important;
+  color: #f8fafc !important;
+  font-family: var(--font-sans);
+}
+
+/* Card components adaptation to Deep Black with glowing borders */
+.bg-brand-container, .bg-white, .bg-slate-50, .bg-slate-100 {
+  background-color: #050811 !important;
   border-width: 1px !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02) !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(245, 158, 11, 0.03) !important;
+  color: #f8fafc !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.bg-brand-container:hover {
-  transform: translateY(-3px) scale(1.01) !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: 0 20px 35px -10px rgba(131, 207, 255, 0.25), 0 10px 15px -8px rgba(0, 0, 0, 0.03) !important;
+.bg-brand-container:hover, .bg-white:hover {
+  border-color: #f59e0b/60 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.9), 0 0 25px rgba(245, 158, 11, 0.15) !important;
 }
 
-/* Dynamic glow effect mapping and background blocks to look stunning */
-.bg-brand-container-highest {
-  background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+/* Containers with highest elevation */
+.bg-brand-container-highest, .bg-slate-200 {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
 }
 
-/* Dynamic glow elements in page sections */
-.bg-\[\#0b1326\] {
-  background-color: #ffffff !important;
-}
-
-/* Header dynamic glass blur border slate */
+/* Header dynamic glass blur with pitch black backdrop */
 #app-header {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(16px) !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 4px 20px -5px rgba(0,0,0,0.05) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.8) !important;
+  color: #ffffff !important;
+}
+
+#bottom-navigation-bar {
+  background-color: rgba(0, 0, 0, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  border-color: #1e293b !important;
 }
 
 #whatsapp-header {
-  background-color: #fafbfc !important;
-  border-color: #e2e8f0 !important;
+  background-color: #090d16 !important;
+  border-color: #1e293b !important;
+  color: #f8fafc !important;
 }
 
-/* Let's translate text classes */
-.text-\[\#bdc8d1\], .text-\[\#bdc8d1\]\/90, .text-\[\#dae2fd\] {
-  color: #334155 !important; /* Deep contrast Slate-700 for maximum readability */
+/* Text class contrast mappings for deep black mode */
+.text-slate-900, .text-slate-950, .text-slate-800, .text-slate-805 {
+  color: #ffffff !important;
 }
 
-.text-\[\#bdc8d1\]\/60, .text-\[\#bdc8d1\]\/50, .text-white\/70, .text-white\/60 {
-  color: #475569 !important; /* High contrast Slate-600 */
+.text-slate-700, .text-slate-600 {
+  color: #cbd5e1 !important;
 }
 
-.text-white\/40, .text-\[\#bdc8d1\]\/30, .text-\[\#bdc8d1\]\/40 {
-  color: #64748b !important; /* Slate-500 */
+.text-slate-500, .text-slate-400 {
+  color: #94a3b8 !important;
 }
 
-/* Let's ensure active navigation borders and links look gorgeous */
-.border-white\/10, .border-white\/5, .border-white\/15, .border-white\/20, .border-white\/30 {
-  border-color: #e2e8f0 !important;
+/* Border overrides */
+.border-slate-100, .border-slate-200 {
+  border-color: #1e293b !important;
 }
 
-/* Keyboard keys should stand out still */
-.bg-white {
+/* Inputs, Textareas, Selects in pitch black theme */
+input, select, textarea {
+  background-color: #090d16 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #64748b !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Keyboard keys adaptation in black mode */
+.bg-white.border-b-4 {
   background-color: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
   color: #0f172a !important;
 }
 
-/* Audio visualizer black bg */
-.bg-black {
-  background-color: #0c101d !important;
-}
-
-/* Active elements circle nodes */
-.bg-brand-container.border-white\/10 {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  color: #1e293b !important;
-}
-
-/* Make specific relative minor key button styling more vibrant with logo colors */
-.bg-white\/5.border-white\/5 {
-  background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
-  color: #1e293b !important;
-}
-
-/* WhatsApp messages */
-.self-start.mr-auto .bg-brand-container {
-  background-color: #f1f5f9 !important;
-  color: #0f172a !important;
-  border: 1px solid #e2e8f0 !important;
-}
-
-/* Make checkout modals stand out beautifully with sharp light themes */
+/* Checkout modals stand out on black background */
 #checkout-modal {
-  background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15) !important;
+  background-color: #090d16 !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(245, 158, 11, 0.2) !important;
 }
 #checkout-modal-overlay {
-  background-color: rgba(15, 23, 42, 0.4) !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
 }
 
-/* Additional high-fidelity improvements to remove bleak look */
+/* High contrast typography gradients */
 .text-transparent {
   background-clip: text !important;
 }
 
-/* Premium gradient accents */
 .text-brand-gradient {
-  background: linear-gradient(135deg, #0091ff 0%, #f43f5e 50%, #ff6b00 100%) !important;
+  background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 50%, #38bdf8 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-}
-
-/* Interactive elements button style */
-.bg-gradient-to-r.from-\[\#ffd9e4\] {
-  background: linear-gradient(135deg, #ff2a85 0%, #ff6b00 100%) !important;
-  color: #ffffff !important;
 }

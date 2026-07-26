@@ -85,106 +85,109 @@ export default function CoursesView({ courses, onUnlockCourse, onGoToClassroom }
       </section>
 
       {/* Courses Catalog Card Grid */}
-      <section className="px-4 max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredCourses.map((course) => (
-            <div
-              key={course.id}
-              className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary/40 transition-all duration-300 flex flex-col justify-between group h-full shadow-sm hover:shadow-xl hover:-translate-y-1"
-              id={`course-card-${course.id}`}
-            >
-              <div>
-                {/* Visual Image container with Category Label Badge */}
-                <div className="relative h-44 overflow-hidden bg-slate-950">
-                  <img
-                    src={course.imageUrl}
-                    alt={course.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                  
-                  {/* Badge top-right */}
-                  <span className={`absolute top-4 right-4 px-2.5 py-1 rounded-md text-[9px] font-mono font-bold uppercase tracking-wider shadow-md ${
-                    course.type === 'En Vivo' 
-                      ? 'bg-brand-tertiary text-white' 
-                      : course.type === 'En Línea' 
-                        ? 'bg-brand-primary text-white' 
-                        : 'bg-brand-secondary text-white'
-                  }`}>
-                    {course.type}
-                  </span>
-                  
-                  {/* Category Pill bottom-left */}
-                  <span className="absolute bottom-3 left-4 px-2 py-1 rounded bg-black/70 text-white text-[10px] font-mono border border-white/10 font-bold">
-                    🎷 {course.category}
-                  </span>
-                </div>
-
-                {/* Content space */}
-                <div className="p-5 space-y-3">
-                  <div className="flex justify-between items-start gap-4">
-                    <h3 className="text-lg font-display font-bold text-slate-900 group-hover:text-brand-primary transition-colors leading-snug">
-                      {course.title}
-                    </h3>
-                    <span className="text-xl font-mono font-black text-brand-secondary">
-                      {typeof course.price === 'string' && course.price.includes('$') ? course.price : `$${course.price}`}
+      <section className="px-4 max-w-5xl mx-auto">
+        {filteredCourses.length === 0 ? (
+          <div className="text-center py-12 px-6 bg-slate-900/60 border border-slate-800 rounded-2xl max-w-md mx-auto space-y-3 shadow-xl animate-fade-in">
+            <Compass className="w-10 h-10 mx-auto text-amber-500 animate-spin-slow" />
+            <h3 className="text-base font-bold text-slate-200">No hay cursos disponibles en esta categoría</h3>
+            <p className="text-xs text-slate-400 font-medium leading-relaxed">
+              Puedes agregar nuevos cursos fácilmente para esta u otras categorías desde el <strong className="text-amber-400">Panel de Control Escolar</strong>.
+            </p>
+          </div>
+        ) : (
+          <div className={
+            filteredCourses.length === 1
+              ? "max-w-xl mx-auto"
+              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          }>
+            {filteredCourses.map((course) => (
+              <div
+                key={course.id}
+                className="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between group h-full shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                id={`course-card-${course.id}`}
+              >
+                <div>
+                  {/* Visual Image container with Category Label Badge */}
+                  <div className="relative h-48 overflow-hidden bg-slate-950">
+                    <img
+                      src={course.imageUrl}
+                      alt={course.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    
+                    {/* Badge top-right */}
+                    <span className={`absolute top-4 right-4 px-2.5 py-1 rounded-md text-[9px] font-mono font-black uppercase tracking-wider shadow-md ${
+                      course.type === 'En Vivo' 
+                        ? 'bg-amber-500 text-slate-950' 
+                        : course.type === 'En Línea' 
+                          ? 'bg-emerald-500 text-slate-950' 
+                          : 'bg-blue-500 text-white'
+                    }`}>
+                      {course.type}
+                    </span>
+                    
+                    {/* Category Pill bottom-left */}
+                    <span className="absolute bottom-3 left-4 px-2.5 py-1 rounded bg-black/80 text-amber-400 text-[10px] font-mono border border-amber-500/20 font-bold shadow">
+                      🎷 {course.category}
                     </span>
                   </div>
 
-                  <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                    {course.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-500 pt-2 border-t border-slate-100">
-                    <div className="flex items-center gap-1">
-                      <BookOpen size={12} className="text-brand-primary" />
-                      <span>{course.modulesCount || 2} Módulos</span>
+                  {/* Content space */}
+                  <div className="p-6 space-y-3">
+                    <div className="flex justify-between items-start gap-4">
+                      <h3 className="text-xl font-display font-black text-slate-100 group-hover:text-amber-400 transition-colors leading-snug">
+                        {course.title}
+                      </h3>
+                      <span className="text-xl font-mono font-black text-amber-400 shrink-0">
+                        {typeof course.price === 'string' && course.price.includes('$') ? course.price : `$${course.price}`}
+                      </span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock size={12} className="text-[#ffb786]" />
-                      <span>{course.durationInMonths || 3} Meses de Acceso</span>
+
+                    <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                      {course.description}
+                    </p>
+
+                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400 pt-3 border-t border-slate-800">
+                      <div className="flex items-center gap-1.5">
+                        <BookOpen size={13} className="text-amber-400" />
+                        <span>{course.modulesCount || 2} Módulos</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Clock size={13} className="text-emerald-400" />
+                        <span>{course.durationInMonths || 3} Meses Acceso</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Card Footer action button */}
-              <div className="p-5 pt-0">
-                {course.unlocked ? (
-                  <button
-                    onClick={() => onGoToClassroom(course.id)}
-                    className="w-full py-2.5 bg-slate-50 hover:bg-brand-primary/10 border border-brand-primary/30 hover:border-brand-primary text-brand-primary text-xs font-mono font-bold rounded-lg tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
-                    id={`btn-explore-${course.id}`}
-                  >
-                    <Unlock size={14} />
-                    ADQUIRIDO - ENTRAR AL AULA
-                  </button>
-                ) : (
-                  course.id === 'piano-maestro' ? (
+                {/* Card Footer action button */}
+                <div className="p-6 pt-0">
+                  {course.unlocked ? (
                     <button
-                      onClick={() => handleOpenCheckout(course)}
-                      className="w-full py-2.5 bg-gradient-to-r from-brand-secondary to-brand-tertiary hover:brightness-110 text-white font-display text-xs font-black rounded-lg tracking-wide uppercase transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
-                      id={`btn-pay-${course.id}`}
+                      onClick={() => onGoToClassroom(course.id)}
+                      className="w-full py-3 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-mono font-bold rounded-xl tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:scale-[1.02]"
+                      id={`btn-explore-${course.id}`}
                     >
-                      <Lock size={14} />
-                      Pagar y Desbloquear
+                      <Unlock size={14} />
+                      ACCEDER AL AULA VIRTUAL
                     </button>
                   ) : (
                     <button
-                      disabled
-                      className="w-full py-2.5 bg-slate-100 text-slate-400 border border-slate-200 text-xs font-mono font-bold rounded-lg tracking-wider cursor-not-allowed flex items-center justify-center gap-2 shadow-sm"
-                      id={`btn-disabled-${course.id}`}
+                      onClick={() => handleOpenCheckout(course)}
+                      className="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-400 hover:brightness-110 text-slate-950 font-display text-xs font-black rounded-xl tracking-wide uppercase transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02]"
+                      id={`btn-pay-${course.id}`}
                     >
                       <Lock size={14} />
-                      DESACTIVADO TEMPORALMENTE
+                      PAGAR Y DESBLOQUEAR
                     </button>
-                  )
-                )}
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Checkout Simulator Modal */}

@@ -212,11 +212,11 @@ export default function App() {
   const unlockedCourses = courses.filter(c => c.unlocked);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans relative flex flex-col justify-between overflow-x-hidden selection:bg-[#ffb0cc] selection:text-slate-950" id="app-root-container">
+    <div className="min-h-screen bg-black text-slate-100 font-sans relative flex flex-col justify-between overflow-x-hidden selection:bg-amber-500 selection:text-slate-950" id="app-root-container">
       {/* Background glow stage lights */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-[100px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-80 h-80 bg-brand-secondary/5 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-[#ffb786]/5 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       {/* Navigation Header */}
       <Header 
@@ -292,26 +292,26 @@ export default function App() {
         )}
       </main>
 
-      {/* Styled Footer Block matching screenshots */}
-      <footer className="w-full bg-slate-50 border-t border-slate-100 py-8 px-6 text-center text-xs space-y-4 pb-28 mt-12" id="app-brand-footer">
+      {/* Styled Footer Block matching pitch black theme */}
+      <footer className="w-full bg-slate-950 border-t border-slate-800 py-8 px-6 text-center text-xs space-y-4 pb-28 mt-12" id="app-brand-footer">
         <div className="space-y-1">
-          <span className="text-sm font-display font-black bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent font-extrabold uppercase tracking-wide">
-            Armonía
+          <span className="text-sm font-display font-black bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent font-extrabold uppercase tracking-wide">
+            Da Capo Academia Musical
           </span>
           <p className="text-[10px] text-slate-400 font-mono italic">
-            "Deja que la música te toque" — Escuela de Música Elite v2.16
+            "Aprende música a tu ritmo" — Formación Musical de Excelencia
           </p>
         </div>
 
-        <div className="flex justify-center gap-6 text-slate-500 font-mono text-[10px]">
-          <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Políticas de Privacidad del Alumno Armonía.')}>Privacidad</button>
-          <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Términos de servicio y condiciones de inscripción.')}>Términos</button>
-          <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Contacto Escuela: WhatsApp +57 311 754 1352 | hola@armoniamusica.com')}>Contacto</button>
-          <button className="hover:text-slate-800 transition-colors" onClick={() => alert('Soporte técnico para alumnos activos 24/7.')}>Soporte</button>
+        <div className="flex justify-center gap-6 text-slate-400 font-mono text-[10px]">
+          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Políticas de Privacidad de Da Capo Academia Musical.')}>Privacidad</button>
+          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Términos de servicio y condiciones de inscripción.')}>Términos</button>
+          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Contacto Escuela: WhatsApp +57 311 754 1352 | hola@dacapomusical.com')}>Contacto</button>
+          <button className="hover:text-amber-400 transition-colors" onClick={() => alert('Soporte técnico para alumnos activos 24/7.')}>Soporte</button>
         </div>
 
-        <p className="text-[10px] text-slate-400 font-mono">
-          © 2026 Escuela de Música Armonía. Todos los derechos reservados.
+        <p className="text-[10px] text-slate-500 font-mono">
+          © 2026 Academia Musical Da Capo. Todos los derechos reservados.
         </p>
       </footer>
 
