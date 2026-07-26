@@ -81,98 +81,18 @@ export default function HomeView({ onGoToCourses, onBookClass, onOpenWhatsApp }:
 
   const programsList = [
     {
-      id: 'piano',
+      id: 'piano-maestro',
       category: 'adultos',
-      title: 'Cátedra de Piano & Teclados',
-      subtitle: 'Técnica clásica, popular, lectura de partituras e improvisación.',
-      tag: 'Más Popular',
+      title: 'PAQUETE ARMONÍA STAR',
+      subtitle: 'Programa integral de piano, técnica, lectura de partituras e interpretación en vivo.',
+      tag: 'Paquete Principal Star',
       level: 'Todos los niveles',
-      modality: 'Presencial / En Línea HD',
+      modality: 'En Vivo HD & Aula Virtual',
       image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop',
       features: [
-        'Postura, digitación y lectura a dos manos',
-        'Repertorio personalizado (Clásico, Pop, Jazz)',
-        'Acceso a partituras y simulador en aula virtual'
-      ],
-      price: '$690.000 COP'
-    },
-    {
-      id: 'iniciacion',
-      category: 'infantil',
-      title: 'Iniciación Musical Infantil',
-      subtitle: 'Para niños de 3 a 6 años. Método Suzuki y estimulación auditiva temprana.',
-      tag: 'Infantil Especializado',
-      level: '3 a 6 años',
-      modality: 'Presencial / En Línea HD',
-      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop',
-      features: [
-        'Desarrollo del oído absoluto y sentido rítmico',
-        'Instrumentos adaptados (Xilófonos, Percusión)',
-        'Clases dinámicas y lúdicas pedagógicas'
-      ],
-      price: '$690.000 COP'
-    },
-    {
-      id: 'canto',
-      category: 'vocal',
-      title: 'Técnica Vocal & Expresión Escénica',
-      subtitle: 'Aprende a dominar tu voz con afinación, respiración diafragmática y presencia.',
-      tag: 'Canto Elite',
-      level: 'Principiante a Avanzado',
-      modality: 'Presencial / En Línea HD',
-      image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=600&auto=format&fit=crop',
-      features: [
-        'Colocación vocal, impostación y dicción',
-        'Ampliación del rango vocal sin fatiga',
-        'Interpretación de canciones y micrófono'
-      ],
-      price: '$690.000 COP'
-    },
-    {
-      id: 'guitarra',
-      category: 'adultos',
-      title: 'Guitarra Acústica, Eléctrica & Ukelele',
-      subtitle: 'Acordes, rasgueos, punteos, solos y acompañamiento de tus temas favoritos.',
-      tag: 'Práctico & Rápido',
-      level: 'Todos los niveles',
-      modality: 'Presencial / En Línea HD',
-      image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop',
-      features: [
-        'Lectura de cifrado, tablatura y pentagrama',
-        'Estilos: Pop, Rock, Latina, Flamenco, Jazz',
-        'Acompañamiento en vivo e improvisación'
-      ],
-      price: '$690.000 COP'
-    },
-    {
-      id: 'violin',
-      category: 'adultos',
-      title: 'Violín & Cuerdas Frotadas',
-      subtitle: 'Técnica de arco, postura elegante, afinación de precisión y belleza sonora.',
-      tag: 'Clásico & Moderno',
-      level: 'Principiante a Avanzado',
-      modality: 'Presencial / En Línea HD',
-      image: 'https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=600&auto=format&fit=crop',
-      features: [
-        'Dominio de la vara y técnica de mano izquierda',
-        'Repertorio clásico, bandas sonoras y pop',
-        'Participación en ensambles de cuerdas'
-      ],
-      price: '$690.000 COP'
-    },
-    {
-      id: 'produccion',
-      category: 'produccion',
-      title: 'Producción Musical & Solfeo Digital',
-      subtitle: 'Composición, grabación en DAW, mezcla básica y lectura rítmica moderna.',
-      tag: 'Innovación Digital',
-      level: 'Intermedio',
-      modality: 'En Línea HD / Laboratorio',
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600&auto=format&fit=crop',
-      features: [
-        'Manejo de programas de grabación (Ableton, Logic, FL)',
-        'Armonía funcional y creación de pistas',
-        'Certificado de finalización de módulo'
+        '36 Masterclasses online en vivo y grabadas en HD',
+        'Acceso ilimitado al simulador interactivo de teclado y solfeo',
+        'Tutoría 1-a-1 personalizada con profesores de conservatorio'
       ],
       price: '$690.000 COP'
     }
